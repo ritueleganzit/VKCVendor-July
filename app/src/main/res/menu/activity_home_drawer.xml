@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/grp1">
+        <item
+            android:id="@+id/nav_camera"
+            android:title="HOME" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/grp2">
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="MESSAGE" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/grp4">
+        <item
+            android:id="@+id/nav_manage"
+            android:title="VIEW COMPLETED POS" />
+    </group>
+
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/grp5">
+        <item
+            android:id="@+id/nav_logout"
+            android:title="LOGOUT" />
+    </group>
+
+
+
+
+</menu>

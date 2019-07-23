@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="?attr/actionBarSize"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="5dp"
+
+                app:cardElevation="5dp"
+
+                app:cardUseCompatPadding="true">
+
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/lin_profile"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:padding="5dp"
+                            android:paddingTop="5dp">
+
+                            <TableRow android:layout_marginBottom="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="50"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/poppins_regular"
+
+                                    android:singleLine="true"
+                                    android:text="PO Number" />
+
+                                <TextView
+                                    android:id="@+id/txt_po_number"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="50"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:gravity="end"
+                                    android:singleLine="true"
+                                    android:text="000000000"
+                                    android:textColor="@color/black" />
+
+
+                            </TableRow>
+
+                            <TableRow android:layout_marginBottom="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="50"
+                                    android:ellipsize="end"
+
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:singleLine="true"
+                                    android:text="Line Number" />
+
+                                <TextView
+                                    android:id="@+id/txt_line_number"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="50"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:gravity="end"
+
+                                    android:singleLine="true"
+                                    android:text="L1213 "
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/black" />
+
+
+                            </TableRow>
+
+                            <TableRow android:layout_marginBottom="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:singleLine="true"
+                                    android:text="Article"
+
+                                    />
+
+                                <TextView
+                                    android:id="@+id/txt_article"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="50"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:gravity="end"
+                                    android:singleLine="true"
+                                    android:text="13916 ladies blue"
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/black" />
+
+
+                            </TableRow>
+
+
+                        </TableLayout>
+
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_po_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:descendantFocusability="beforeDescendants"
+                android:orientation="vertical"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview"
+                android:layout_below="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="5dp"
+
+                app:cardElevation="5dp"
+
+                app:cardUseCompatPadding="true">
+
+
+
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:android="http://schemas.android.com/apk/res/android">
+                    <LinearLayout
+                        android:id="@+id/first"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_margin="5dp"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:text="@string/upload"
+                            android:textColor="#000"/>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/til_phone"
+                            android:layout_below="@+id/til_salary"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/ed_email"
+                                android:focusable="false"
+                                android:hint="Upload Image"
+                                android:paddingBottom="10dp"
+                                android:drawableRight="@drawable/ic_gal"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:id="@+id/rc_image"
+                            android:layout_height="wrap_content"
+                            ></android.support.v7.widget.RecyclerView>
+                        <LinearLayout
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <FrameLayout
+                                android:id="@+id/aadhar_add_front"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+                                <LinearLayout
+                                    android:layout_width="85dp"
+                                    android:layout_height="85dp"
+                                    android:gravity="center"
+                                    android:scaleType="centerInside"
+                                    android:background="@drawable/dashed_square"
+                                    android:orientation="vertical" >
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@mipmap/camera_gray" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textColor="@color/gray"
+                                        android:textSize="12sp"
+                                        android:text="Add Photo"/>
+
+                                </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/pic1"
+                                    android:layout_width="85dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_height="85dp" />
+                            </FrameLayout>
+                            <FrameLayout
+                                android:id="@+id/aadhar_add_back"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+                                <LinearLayout
+                                    android:layout_width="85dp"
+                                    android:layout_height="85dp"
+                                    android:gravity="center"
+                                    android:scaleType="centerInside"
+                                    android:background="@drawable/dashed_square"
+                                    android:orientation="vertical" >
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@mipmap/camera_gray" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textColor="@color/gray"
+                                        android:textSize="12sp"
+                                        android:text="Add Photo"/>
+
+                                </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/pic2"
+                                    android:layout_width="85dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_height="85dp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+                                <LinearLayout
+                                    android:layout_width="85dp"
+                                    android:layout_height="85dp"
+                                    android:gravity="center"
+                                    android:scaleType="centerInside"
+                                    android:background="@drawable/dashed_square"
+                                    android:orientation="vertical" >
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@mipmap/camera_gray" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textColor="@color/gray"
+                                        android:textSize="12sp"
+                                        android:text="Add Photo"/>
+
+                                </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/pic3"
+                                    android:layout_width="85dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_height="85dp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,168 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:layout_below="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    app:cardBackgroundColor="#ffffff"
+    app:cardCornerRadius="5dp"
+
+    app:cardElevation="5dp"
+
+    app:cardUseCompatPadding="true">
+
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_centerVertical="true"
+                android:paddingTop="5dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/lin_profile"
+                android:padding="5dp"
+                >
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:text="Grid Value"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:id="@+id/gridvalue"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:ellipsize="end"
+                        android:text="5L"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:text="Quantity Produced"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_weight="8"
+                        android:text="20"
+                        android:id="@+id/quantity_produced"
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_regular"
+android:inputType="number"
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow>
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:text="Quantity Pending"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:text="@string/quantitypending"
+                        android:id="@+id/scheduled_quantity"
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow>
+
+
+                <TableRow android:layout_marginBottom="5dp"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/overproductiontr">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:text="Over Production"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:id="@+id/overproduction"
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow>
+
+
+
+
+            </TableLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</android.support.v7.widget.CardView>

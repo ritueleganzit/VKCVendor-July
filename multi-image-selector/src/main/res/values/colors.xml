@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mis_actionbar_color">#21282C</color>
+    <color name="colorPrimary">#1b75cf</color>
+    <color name="colorPrimaryDark">#0f2536</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="colorDark">#0f2536</color>
+
+    <color name="uncompleted_color">#A3E0D9</color>
+    <color name="uncompleted_text_color">#565656</color>
+    <color name="grey">#f1f1f1</color>
+    <color name="colorButton">#0D3A61</color>
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#727272</color>
+</resources>

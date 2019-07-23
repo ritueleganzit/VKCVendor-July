@@ -1,0 +1,225 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:layout_below="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    app:cardBackgroundColor="#ffffff"
+    app:cardCornerRadius="5dp"
+    app:contentPadding="5dp"
+    app:cardElevation="5dp"
+
+    app:cardUseCompatPadding="true">
+
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_centerVertical="true"
+                android:paddingTop="5dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/lin_profile"
+                android:padding="5dp"
+                >
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:text="PO Number"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_po_number"
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:ellipsize="end"
+                        android:text="000000000"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:text="Date"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_date"
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:text="12/01/2019 "
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow> <TableRow android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/poppins_regular"
+
+                    android:text="Line Number"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_line_number"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:text=" "
+                    android:gravity="end"
+                    android:fontFamily="@font/poppins_regular"
+
+                    android:textColor="@color/black"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    />
+
+
+            </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:layout_weight="50"
+                        android:text="Article"
+                        android:fontFamily="@font/poppins_regular"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_article"
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:gravity="end"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text=""
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:text="Produced Quantity"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_quantity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:textColor="@color/black"
+                        android:layout_weight="50"
+                        android:text="0/0"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Defects Count"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_defects"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:gravity="end|center_vertical"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_weight="50"
+                        android:text="0"
+                        android:drawableRight="@drawable/ic_share"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</android.support.v7.widget.CardView>

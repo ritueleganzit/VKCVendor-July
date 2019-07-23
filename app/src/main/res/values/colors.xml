@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ba8f58</color>
+    <color name="colorPrimaryDark">#88683e</color>
+    <color name="colorAccent">#88683e</color>
+    <color name="black">#2a2a2a</color>
+    <color name="gray">#7f7f7f</color>
+    <color name="red">#c43434</color>
+    <color name="green">#2B9E30</color>
+    <color name="transparent">#B5F8F8F8</color>
+    <color name="thumb_active">#069ECF</color>
+    <color name="track_active">#66069ECF</color>
+
+    <color name="thumb_inactive">#A5A5A5</color>
+    <color name="track_inactive">#66A5A5A5</color>
+</resources>

@@ -1,0 +1,212 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/toolbar"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    app:cardBackgroundColor="#ffffff"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+
+    app:cardUseCompatPadding="true">
+
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/lin_profile"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:paddingTop="5dp"
+                >
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:singleLine="true"
+                        android:text="Grid Value"
+                        />
+
+                    <TextView
+                        android:id="@+id/grid_value"
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="end"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+
+                        android:fontFamily="@font/poppins_regular"
+                        android:singleLine="true"
+                        android:text="Scheduled Quantity"
+                        />
+
+                    <TextView
+                        android:id="@+id/scheduled_quantity"
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+android:fontFamily="@font/poppins_regular"
+                        android:gravity="end"
+                        android:singleLine="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/black"
+                        />
+
+
+                </TableRow> <TableRow android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:ellipsize="end"
+
+                    android:fontFamily="@font/poppins_regular"
+                    android:singleLine="true"
+                    android:text="Produced Quantity"
+                    />
+
+                <TextView
+                    android:id="@+id/quality_produced"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:ellipsize="end"
+android:fontFamily="@font/poppins_regular"
+                    android:gravity="end"
+                    android:singleLine="true"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/black"
+                    />
+
+
+            </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:singleLine="true"
+                        android:text="Start Time"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/start_time"
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+android:gravity="end"
+                        android:singleLine="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/black"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+
+                        android:fontFamily="@font/poppins_regular"
+                        android:singleLine="true"
+                        android:text="End Time"
+                        />
+
+                    <TextView
+                        android:id="@+id/end_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="end"
+                        android:singleLine="true"
+
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/black"
+                        />
+
+
+                </TableRow> <TableRow android:visibility="gone" android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+
+                        android:fontFamily="@font/poppins_regular"
+                        android:singleLine="true"
+                        android:text="Complete"
+                        />
+
+                    <TextView
+                        android:id="@+id/complete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="end"
+                        android:singleLine="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/red"
+                        />
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</android.support.v7.widget.CardView>

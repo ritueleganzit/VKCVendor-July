@@ -1,0 +1,84 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:listDivider">@color/colorPrimary</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="settings_item_layout">
+    <item name="android:orientation">vertical</item>
+    <item name="android:textSize">@dimen/small_text</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+    <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+    <item name="android:paddingTop">16dp</item>
+    <item name="android:paddingBottom">@dimen/items_inbetween_space</item>
+
+</style>
+
+<style name="settings_header">
+<item name="android:textColor">@color/colorPrimaryDark</item>
+<item name="android:textSize">@dimen/large_text</item>
+<item name="android:layout_width">wrap_content</item>
+<item name="android:layout_height">wrap_content</item>
+</style>
+
+<style name="settings_sub_header">
+<item name="android:textColor">@color/colorPrimary</item>
+<item name="android:textSize">@dimen/medium_text</item>
+<item name="android:layout_width">wrap_content</item>
+<item name="android:layout_height">wrap_content</item>
+</style>
+
+<style name="settings_details">
+<item name="android:textColor">@color/colorPrimaryDark</item>
+<item name="android:textSize">@dimen/small_text</item>
+<item name="android:layout_width">wrap_content</item>
+<item name="android:layout_height">wrap_content</item>
+</style>
+    <style name="switch_theme">
+        <item name="thumbTint">@color/colorPrimaryDark</item>
+        <item name="trackTint">@color/thumb_inactive</item>
+    </style>
+    <style name="TextLabel" parent="Base.Widget.MaterialComponents.TextInputLayout">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColor">@color/gray</item>
+
+        <item name="android:textSize">15sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/gray</item>
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">@color/gray</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.Custom" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <!-- Support library compatibility -->
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+    <style name="AlertDialogCustom" parent="@android:style/Animation.Dialog">
+        <item name="android:typeface">sans</item>
+
+
+    </style>
+    <style name="Theme_Dialog" parent="android:Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+</resources>

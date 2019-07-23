@@ -1,0 +1,12 @@
+<FrameLayout android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+       <android.support.v7.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/list_hour_rc"></android.support.v7.widget.RecyclerView>
+
+
+    </FrameLayout>
+

@@ -1,0 +1,180 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:layout_below="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    app:cardBackgroundColor="#ffffff"
+    app:cardCornerRadius="5dp"
+
+    app:cardElevation="5dp"
+
+    app:cardUseCompatPadding="true">
+
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_centerVertical="true"
+                android:paddingTop="5dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/lin_profile"
+                android:padding="5dp"
+                >
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:text="PO Number"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:gravity="end"
+                        android:id="@+id/po_number"
+                        android:fontFamily="@font/poppins_regular"
+                        android:ellipsize="end"
+                        android:text="000000000"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:fontFamily="@font/poppins_regular"
+
+                        android:text="Line Number"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:text="L1213 "
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_regular"
+android:id="@+id/linnum"
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:layout_weight="50"
+                        android:text="Article"
+                        android:fontFamily="@font/poppins_regular"
+
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:gravity="end"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_regular"
+android:id="@+id/artname"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text="13916 ladies blue"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:id="@+id/ed_selectstarttime"
+                        android:fontFamily="@font/poppins_regular"
+                        android:drawableRight="@drawable/ic_cal"
+                        android:textColor="@color/black"
+                        android:layout_weight="50"
+                        android:focusable="false"
+                        android:hint="Select Start Time"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        />
+
+
+                </TableRow><TableRow android:layout_marginBottom="5dp">
+
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:id="@+id/ed_selectendtime"
+                    android:focusable="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:drawableRight="@drawable/ic_cal"
+                    android:textColor="@color/black"
+                    android:layout_weight="50"
+                    android:hint="Select End Time"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    />
+
+
+
+            </TableRow>
+
+
+            </TableLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</android.support.v7.widget.CardView>

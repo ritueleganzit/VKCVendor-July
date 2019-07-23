@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/riturajan/Downloads/VKCVendor-June-master/multi-image-selector/src/main/assets"/><source path="/Users/riturajan/Downloads/VKCVendor-June-master/multi-image-selector/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/riturajan/Downloads/VKCVendor-June-master/multi-image-selector/src/debug/assets"/></dataSet></merger>

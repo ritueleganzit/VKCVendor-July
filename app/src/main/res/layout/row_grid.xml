@@ -1,0 +1,53 @@
+<TableLayout android:layout_centerVertical="true"
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content"
+    android:layout_toLeftOf="@+id/lin_profile"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TableRow android:layout_marginBottom="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtgrid"
+
+            android:text="5L"
+
+            />
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="="
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtgridnum"
+
+            android:text="10"
+
+            />
+
+
+
+
+
+    </TableRow>
+
+
+
+
+
+</TableLayout>
+
+
+
+
+

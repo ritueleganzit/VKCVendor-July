@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".LoginActivity">
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="-10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bgd"></ImageView>
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:theme="@style/CustomActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_arrow"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+
+                android:text="HOUR WISE ENTRY"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#ffffff" />
+
+            <ImageView
+                android:id="@+id/button"
+                android:layout_width="30dp"
+                android:visibility="gone"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_search"
+                android:scaleType="centerInside" />
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_below="@+id/toolbar"
+    android:fillViewport="true">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:app="http://schemas.android.com/apk/res-auto"
+           android:id="@+id/cardview"
+           android:layout_below="@+id/toolbar"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="5dp"
+           android:layout_marginRight="5dp"
+           app:cardBackgroundColor="#ffffff"
+           app:cardCornerRadius="5dp"
+
+           app:cardElevation="5dp"
+
+           app:cardUseCompatPadding="true">
+
+
+
+           <FrameLayout
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content">
+
+               <LinearLayout
+                   android:orientation="horizontal"
+                   android:gravity="center_vertical"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content">
+
+                   <TableLayout
+                       android:layout_centerVertical="true"
+                       android:paddingTop="5dp"
+                       android:layout_weight="1"
+                       android:layout_width="wrap_content"
+                       android:gravity="center_vertical"
+                       android:layout_height="wrap_content"
+                       android:layout_toLeftOf="@+id/lin_profile"
+                       android:padding="5dp"
+                       >
+
+                       <TableRow android:layout_marginBottom="5dp">
+
+                           <TextView
+                               android:layout_width="0dp"
+                               android:layout_weight="50"
+                               android:text="PO Number"
+                               android:fontFamily="@font/poppins_regular"
+
+                               android:singleLine="true"
+                               android:ellipsize="end"
+                               />
+
+                           <TextView
+                               android:layout_width="0dp"
+                               android:layout_weight="50"
+                               android:singleLine="true"
+                               android:textColor="@color/black"
+                               android:gravity="end"
+                               android:id="@+id/po_number"
+                               android:fontFamily="@font/poppins_regular"
+                               android:ellipsize="end"
+                               android:text="000000000"
+                               />
+
+
+                       </TableRow>
+
+                       <TableRow android:layout_marginBottom="5dp">
+
+                           <TextView
+                               android:layout_width="0dp"
+                               android:layout_weight="50"
+                               android:fontFamily="@font/poppins_regular"
+
+                               android:text="Line Number"
+                               android:singleLine="true"
+                               android:ellipsize="end"
+                               />
+
+                           <TextView
+                               android:layout_width="0dp"
+                               android:layout_weight="50"
+                               android:text="L1213 "
+                               android:gravity="end"
+                               android:fontFamily="@font/poppins_regular"
+                               android:id="@+id/linnum"
+                               android:textColor="@color/black"
+                               android:singleLine="true"
+                               android:ellipsize="end"
+                               android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                               />
+
+
+                       </TableRow>
+
+                       <TableRow android:layout_marginBottom="5dp">
+
+                           <TextView
+                               android:layout_width="0dp"
+
+                               android:layout_height="wrap_content"
+                               android:singleLine="true"
+                               android:ellipsize="end"
+                               android:layout_weight="50"
+                               android:text="Article"
+                               android:fontFamily="@font/poppins_regular"
+
+                               />
+
+                           <TextView
+                               android:layout_width="0dp"
+                               android:layout_weight="50"
+                               android:gravity="end"
+                               android:textColor="@color/black"
+                               android:fontFamily="@font/poppins_regular"
+                               android:id="@+id/artname"
+                               android:singleLine="true"
+                               android:ellipsize="end"
+                               android:text="13916 ladies blue"
+                               android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                               />
+
+
+                       </TableRow>
+
+                       <TableRow android:layout_marginBottom="5dp">
+
+
+
+                           <TextView
+                               android:layout_width="0dp"
+
+                               android:layout_height="wrap_content"
+                               android:singleLine="true"
+                               android:ellipsize="end"
+                               android:layout_weight="50"
+                               android:text="Select Slot"
+                               android:fontFamily="@font/poppins_regular"
+
+                               />
+
+
+                           <EditText
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:singleLine="true"
+                               android:ellipsize="end"
+                               android:gravity="start"
+                               android:id="@+id/ed_selectstarttime"
+                               android:fontFamily="@font/poppins_regular"
+                               android:drawableRight="@drawable/ic_time"
+                               android:textColor="@color/black"
+                               android:layout_weight="50"
+                               android:focusable="false"
+                               android:hint="Slot Time"
+                               android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                               />
+
+
+                       </TableRow>
+
+
+
+                   </TableLayout>
+
+
+
+
+
+               </LinearLayout>
+
+
+           </FrameLayout>
+
+       </android.support.v7.widget.CardView>
+       <android.support.v7.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:id="@+id/rc_hour_list"
+
+           android:layout_height="wrap_content"
+           >
+
+       </android.support.v7.widget.RecyclerView>
+
+       <LinearLayout android:layout_gravity="center"
+           android:layout_width="match_parent"
+           android:layout_margin="5dp"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           xmlns:android="http://schemas.android.com/apk/res/android">
+
+           <LinearLayout
+               android:gravity="center"
+               android:id="@+id/check"
+               android:layout_margin="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <ImageView
+                   android:id="@+id/imgcheck"
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:src="@mipmap/ic_uncheck"/>
+
+               <TextView
+
+                   android:fontFamily="@font/poppins_regular"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Mark as Completed"/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_margin="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <LinearLayout
+                   android:layout_weight="1"
+                   android:id="@+id/cancel"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:gravity="center"
+                   android:layout_margin="5dp"
+                   android:padding="8dp"
+                   android:background="@drawable/btn_border_bg"
+                   android:layout_gravity="center">
+
+
+                   <TextView
+                       android:fontFamily="@font/poppins_medium"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="@color/colorPrimaryDark"
+                       android:layout_gravity="center"
+                       android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                       android:text="CANCEL"/>
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_weight="1"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:gravity="center"
+                   android:id="@+id/savelin"
+
+                   android:layout_margin="5dp"
+                   android:padding="8dp"
+                   android:background="@drawable/btn_bg"
+                   android:layout_gravity="center">
+
+
+                   <TextView
+                       android:fontFamily="@font/poppins_medium"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="#ffffff"
+                       android:layout_gravity="center"
+                       android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                       android:text="SAVE"/>
+
+               </LinearLayout>
+           </LinearLayout>
+       </LinearLayout>
+
+   </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
+
+
+
+</RelativeLayout>
