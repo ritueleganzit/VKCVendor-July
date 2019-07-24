@@ -91,7 +91,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
-        android:layout_margin="2dp"
+
+        android:layout_margin="10dp"
         android:id="@+id/btncontinue"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark"

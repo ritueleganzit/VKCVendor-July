@@ -33,9 +33,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/network_security_config" />
         </provider>
-        <service
-            android:name=".util.MyService"
-            android:enabled="true" />
+
 
         <activity android:name=".ReminderActivity" />
         <activity

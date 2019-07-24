@@ -57,9 +57,16 @@ public class ReminderActivity extends AppCompatActivity {
                 editor.putBoolean("timer", false);
                 editor.commit();
                 Log.d(TAG, "onCheckedChanged: false");
-                mMediaPlayer.stop();
 
-                startActivity(new Intent(ReminderActivity.this, HomeActivity.class));
+                    mMediaPlayer.reset();
+
+
+                    mMediaPlayer.stop();
+                    mMediaPlayer.release();
+
+
+                startActivity(new Intent(ReminderActivity.this, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }
@@ -83,6 +90,12 @@ public class ReminderActivity extends AppCompatActivity {
             }
         }
         return alert;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
     private void playSound(Context context, Uri alert) {

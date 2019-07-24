@@ -34,7 +34,6 @@ public class MyService extends Service {
     SharedPreferences pref;
     private static final String PREF_NAME = "VKC";
     int PRIVATE_MODE = 0;
-    int hour[]={8,9,10,11,12,13,14,15,16,17,18,19,20};
 
     // Editor for Shared preferences
     SharedPreferences.Editor editor;
@@ -46,60 +45,14 @@ public class MyService extends Service {
     }
     @TargetApi(Build.VERSION_CODES.O)
     private void startMyOwnForeground(){
-        String NOTIFICATION_CHANNEL_ID = "com.eleganzit.vkcvendor";
-        String channelName = "My Background Service";
-        NotificationChannel chan = new NotificationChannel(NOTIFICATION_CHANNEL_ID, channelName, NotificationManager.IMPORTANCE_NONE);
-        chan.setLightColor(Color.BLUE);
-        chan.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        assert manager != null;
-        manager.createNotificationChannel(chan);
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
-        Notification notification = notificationBuilder.setOngoing(true)
-                .setSmallIcon(R.drawable.logo_white)
-                .setContentTitle("App is running in background")
-                .setPriority(NotificationManager.IMPORTANCE_MIN)
-                .setCategory(Notification.CATEGORY_SERVICE)
-                .build();
-        startForeground(2, notification);
 
 
     }
-    private void setAlarm() {
 
-
-        AlarmManager  alarmManager;
-
-        for (int i=0;i<hour.length;i++)
-        {
-            alarmManager= (AlarmManager) getSystemService(ALARM_SERVICE);
-
-            Intent intent = new Intent(this, MyService.class);
-
-
-
-            PendingIntent  pIntent = PendingIntent.getService(this, hour[i], intent, PendingIntent.FLAG_CANCEL_CURRENT);
-            Calendar calendar = Calendar.getInstance();
-            calendar.set(Calendar.MILLISECOND, 0);
-            calendar.set(Calendar.SECOND, 0);
-            calendar.set(Calendar.MINUTE, 0);
-            calendar.set(Calendar.HOUR_OF_DAY, hour[i]);
-
-            Log.d("sdf","dsgd g"+calendar.getTimeInMillis());
-
-
-            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pIntent);
-
-
-        }
-
-
-    }
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        setAlarm();
         return super.onStartCommand(intent, flags, startId);
 
     }
@@ -110,11 +63,6 @@ public class MyService extends Service {
         pref = getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
        // Toast.makeText(this, " MyService Created ", Toast.LENGTH_LONG).show();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-            startMyOwnForeground();
-        else
-            startForeground(1, new Notification());
-        Log.d("afdfsdfsdfsd",pref.getString(USER_START_TIME, null)+"   <----->    "+pref.getString(USER_END_TIME, null));
         //compareDate(pref.getString(USER_START_TIME, null),pref.getString(USER_END_TIME, null));
 
     }
