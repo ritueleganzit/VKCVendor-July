@@ -1671,4 +1671,8 @@ public final class R {
         public static int ViewStubCompat_android_inflatedId = 1;
         public static int ViewStubCompat_android_layout = 2;
     }
+    public static final class xml {
+        public static int file_paths = 0x7f190001;
+        public static int network_security_config = 0x7f190002;
+    }
 }

@@ -13,6 +13,7 @@ import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 
@@ -22,10 +23,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.CursorLoader;
+import android.support.v4.content.FileProvider;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.ListPopupWindow;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,8 +43,11 @@ import com.squareup.picasso.provider.PicassoProvider;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 import me.nereo.multi_image_selector.adapter.FolderAdapter;
@@ -62,6 +68,7 @@ public class MultiImageSelectorFragment extends Fragment {
 
     private static final int REQUEST_STORAGE_WRITE_ACCESS_PERMISSION = 110;
     private static final int REQUEST_CAMERA = 100;
+    String imageFilePath;
 
     private static final String KEY_TEMP_FILE = "key_temp_file";
 
@@ -129,6 +136,13 @@ public class MultiImageSelectorFragment extends Fragment {
                 resultList = tmp;
             }
         }
+
+        final String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/picFolder/";
+        File newdir = new File(dir);
+        if (!newdir.exists()) {
+            newdir.mkdir();
+        }
+
         mImageAdapter = new ImageGridAdapter(getActivity(), showCamera(), 3);
         mImageAdapter.showSelectIndicator(mode == MODE_MULTI);
 
@@ -312,7 +326,7 @@ public class MultiImageSelectorFragment extends Fragment {
                     getString(R.string.mis_permission_rationale_write_storage),
                     REQUEST_STORAGE_WRITE_ACCESS_PERMISSION);
         }else {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+           /* Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                 try {
                     mTmpFile = FileUtils.createTmpFile(getActivity());
@@ -320,15 +334,53 @@ public class MultiImageSelectorFragment extends Fragment {
                     e.printStackTrace();
                 }
                 if (mTmpFile != null && mTmpFile.exists()) {
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(getActivity(), BuildConfig.APPLICATION_ID, mTmpFile));
                     startActivityForResult(intent, REQUEST_CAMERA);
                 } else {
                     Toast.makeText(getActivity(), R.string.mis_error_image_not_exist, Toast.LENGTH_SHORT).show();
                 }
             } else {
                 Toast.makeText(getActivity(), R.string.mis_msg_no_camera, Toast.LENGTH_SHORT).show();
+            }*/
+            Intent pictureIntent = new Intent(
+                    MediaStore.ACTION_IMAGE_CAPTURE);
+            if(pictureIntent.resolveActivity(getActivity().getPackageManager()) != null){
+                //Create a file to store the image
+                File photoFile = null;
+                try {
+                    photoFile = createImageFile();
+                } catch (IOException ex) {
+                    // Error occurred while creating the File
+
+                }
+                if (photoFile != null) {
+                    Uri photoURI = FileProvider.getUriForFile(getActivity(),"com.eleganzit.vkcvendor.provider", photoFile);
+                    pictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+                            photoURI);
+                    mTmpFile=photoFile;
+                    startActivityForResult(pictureIntent,
+                            REQUEST_CAMERA);
+                }
             }
         }
+    }
+    private File createImageFile() throws IOException {
+        String timeStamp =
+                new SimpleDateFormat("yyyyMMdd_HHmmss",
+                        Locale.getDefault()).format(new Date());
+        String imageFileName = "IMG_" + timeStamp + "_";
+        File storageDir =
+                getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        imageFilePath = image.getAbsolutePath();
+
+        Log.d("imageFilePath",imageFilePath+"");
+        return image;
     }
 
     private void requestPermission(final String permission, String rationale, final int requestCode){
