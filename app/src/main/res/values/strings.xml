@@ -17,7 +17,7 @@
     <string name="sett_reminder_time_content">8 : 00 PM</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="upload">Upload Images     <font size="12">(min 3)</font> </string>
+    <string name="upload">Upload Images     <font size="12">(min 1)</font> </string>
     <string name="defects">There are <b>0</b> defects recorded for this article so far!!!</string>
     <string name="quantitypending"><b>30</b>(Total Qty:100)</string>
     <string name="Please_enter_email">Please Enter Email Address</string>

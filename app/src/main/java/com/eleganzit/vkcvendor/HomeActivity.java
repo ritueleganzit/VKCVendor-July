@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.RingtoneManager;
@@ -12,6 +13,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
@@ -91,7 +93,6 @@ public static TextView textTitle;
 
                 PlanFragment myPhotosFragment = new PlanFragment();
                 getSupportFragmentManager().beginTransaction()
-                        .addToBackStack("HomeActivity")
                         .replace(R.id.container, myPhotosFragment, "TAG")
                         .commit();
             }
@@ -104,7 +105,6 @@ public static TextView textTitle;
                 tv_defects.setBackgroundResource(R.drawable.transparent_bg);
                 EntryFragment myPhotosFragment = new EntryFragment();
                 getSupportFragmentManager().beginTransaction()
-                        .addToBackStack("HomeActivity")
                         .replace(R.id.container, myPhotosFragment, "TAG")
                         .commit();
             }
@@ -117,7 +117,6 @@ public static TextView textTitle;
                 tv_defects.setBackgroundResource(R.drawable.transparentdark_bg);
                 ViewDefectsFragment myPhotosFragment = new ViewDefectsFragment();
                 getSupportFragmentManager().beginTransaction()
-                        .addToBackStack("HomeActivity")
                         .replace(R.id.container, myPhotosFragment, "TAG")
                         .commit();
             }
@@ -193,6 +192,11 @@ public static TextView textTitle;
 
         }  else if (id == R.id.nav_logout) {
             userLoggedInSession.logoutUser();
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.clear();
+            editor.commit();
+
             for (int i=0;i<hour.length;i++) {
                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 

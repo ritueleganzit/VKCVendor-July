@@ -3,13 +3,17 @@ package com.eleganzit.vkcvendor.fragment;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -73,6 +77,7 @@ import static com.eleganzit.vkcvendor.HomeActivity.textTitle;
  * A simple {@link Fragment} subclass.
  */
 public class MarkPOFragment extends Fragment {
+    int hour[]={8,9,10,11,12,13,14,15,16,17,18,19,20};
 
     List<ArticleData> arrayList=new ArrayList<>();
     LinearLayout next,cancel;
@@ -570,18 +575,18 @@ public class MarkPOFragment extends Fragment {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         if (mSelectPath1!=null) {
-                                            if (mSelectPath1.size() > 2) {
+                                            if (mSelectPath1.size() >= 1) {
                                                 //Toast.makeText(context, ""+mSelectPath1, Toast.LENGTH_SHORT).show();
                                                 addMarkCompleteDetail2(item,po_number, line_id, article_name, sb, sb1);
 
                                             }
                                             else
                                             {
-                                                Toast.makeText(context, "Select min 3 images", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(context, "Select min 1 image", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                         else {
-                                           Toast.makeText(context, "Select min 3 images", Toast.LENGTH_SHORT).show();
+                                           Toast.makeText(context, "Select min 1 image", Toast.LENGTH_SHORT).show();
                                         }
 
                                     }
@@ -764,6 +769,21 @@ public class MarkPOFragment extends Fragment {
                 progressDialog.dismiss();
                 String status = result.getString("status");
                 if (status.equalsIgnoreCase("1")) {
+                    Log.d("dddd","cancel");
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.clear();
+                    editor.commit();
+                    for (int j=0;j<hour.length;j++) {
+                        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+
+                        Intent myIntent = new Intent(getActivity(), HomeActivity.class);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                                getActivity(), hour[j], myIntent,
+                                PendingIntent.FLAG_UPDATE_CURRENT);
+
+                        alarmManager.cancel(pendingIntent);
+                    }
 
                     Toast.makeText(getActivity(), "Successfully updated", Toast.LENGTH_SHORT).show();
                     //PlanFragment myPhotosFragment = new PlanFragment();
@@ -820,12 +840,16 @@ public class MarkPOFragment extends Fragment {
         } else {
 
             MultiImageSelector selector = MultiImageSelector.create(getActivity());
+            selector.showCamera(true);
+
             selector.multi();
             selector.count(6);
-            selector.showCamera(false);
 
             selector.origin(mSelectPath1);
             selector.start(MarkPOFragment.this, REQUEST_IMAGE1);
+
+
+
         }
     }
     public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder>

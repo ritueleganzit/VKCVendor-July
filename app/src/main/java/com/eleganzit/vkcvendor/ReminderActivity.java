@@ -57,12 +57,17 @@ public class ReminderActivity extends AppCompatActivity {
                 editor.putBoolean("timer", false);
                 editor.commit();
                 Log.d(TAG, "onCheckedChanged: false");
-
-                    mMediaPlayer.reset();
-
-
-                    mMediaPlayer.stop();
+                try {
+                    if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+                        mMediaPlayer.stop();
+                    }
                     mMediaPlayer.release();
+                    mMediaPlayer = null;
+                    mMediaPlayer = new MediaPlayer();
+                } catch (Exception e)
+                {
+
+                }
 
 
                 startActivity(new Intent(ReminderActivity.this, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));

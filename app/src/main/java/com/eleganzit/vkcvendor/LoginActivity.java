@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
     LinearLayout login;
     TextView forgotpassword;
     ProgressDialog progressDialog;
-    int hour[]={8,9,10,11,12,13,14,15,16,17,18,19,20};
     TextInputEditText ed_email, ed_pw;
     UserLoggedInSession userLoggedInSession;
 
@@ -102,7 +101,8 @@ public class LoginActivity extends AppCompatActivity {
 
                             }
                          //   compareDate(vendor_start_time, vendor_end_date);
-                            setAlarm();
+
+
                             //startService(new Intent(LoginActivity.this, MyService.class));
                            /* Calendar cal = Calendar.getInstance();
 
@@ -197,83 +197,5 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 
-    private void setAlarm() {
 
-/*
-      AlarmManager  alarmManager;
-
-      for (int i=0;i<hour.length;i++)
-      {
-          alarmManager= (AlarmManager) getSystemService(ALARM_SERVICE);
-
-          Intent intent = new Intent(getApplicationContext(), ReminderActivity.class);
-          intent.setAction(Intent.ACTION_MAIN);
-          intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-
-          PendingIntent  pIntent = PendingIntent.getService(this, hour[i], intent, PendingIntent.FLAG_UPDATE_CURRENT);
-          Calendar calendar = Calendar.getInstance();
-          calendar.set(Calendar.MILLISECOND, 0);
-          calendar.set(Calendar.SECOND, 0);
-          calendar.set(Calendar.MINUTE, 0);
-          calendar.set(Calendar.HOUR_OF_DAY, hour[i]);
-
-          Log.d("sdf","dsgd g"+calendar.getTimeInMillis());
-
-          alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pIntent);
-
-
-
-      }*/
-
-        for (int i=0;i<hour.length;i++) {
-            Intent intent = new Intent(getApplicationContext(), ReminderActivity.class);
-            intent.setAction(Intent.ACTION_MAIN);
-            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            // END_INCLUDE (intent_fired_by_alarm)
-
-            // BEGIN_INCLUDE (pending_intent_for_alarm)
-            // Because the intent must be fired by a system service from outside the application,
-            // it's necessary to wrap it in a PendingIntent.  Providing a different process with
-            // a PendingIntent gives that other process permission to fire the intent that this
-            // application has created.
-            // Also, this code creates a PendingIntent to start an Activity.  To create a
-            // BroadcastIntent instead, simply call getBroadcast instead of getIntent.
-            PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), hour[i],
-                    intent, 0);
-            Calendar calendar = Calendar.getInstance();
-            calendar.set(Calendar.MILLISECOND, 0);
-            calendar.set(Calendar.SECOND, 0);
-            calendar.set(Calendar.MINUTE, 0);
-            calendar.set(Calendar.HOUR_OF_DAY, hour[i]);
-
-            // END_INCLUDE (pending_intent_for_alarm)
-
-            // BEGIN_INCLUDE (configure_alarm_manager)
-            // There are two clock types for alarms, ELAPSED_REALTIME and RTC.
-            // ELAPSED_REALTIME uses time since system boot as a reference, and RTC uses UTC (wall
-            // clock) time.  This means ELAPSED_REALTIME is suited to setting an alarm according to
-            // passage of time (every 15 seconds, 15 minutes, etc), since it isn't affected by
-            // timezone/locale.  RTC is better suited for alarms that should be dependant on current
-            // locale.
-
-            // Both types have a WAKEUP version, which says to wake up the device if the screen is
-            // off.  This is useful for situations such as alarm clocks.  Abuse of this flag is an
-            // efficient way to skyrocket the uninstall rate of an application, so use with care.
-            // For most situations, ELAPSED_REALTIME will suffice.
-            int alarmType = AlarmManager.ELAPSED_REALTIME;
-            final int FIFTEEN_SEC_MILLIS = 15000;
-
-            // The AlarmManager, like most system services, isn't created by application code, but
-            // requested from the system.
-            AlarmManager alarmManager = (AlarmManager)
-                    getSystemService(ALARM_SERVICE);
-
-            // setRepeating takes a start delay and period between alarms as arguments.
-            // The below code fires after 15 seconds, and repeats every 15 seconds.  This is very
-            // useful for demonstration purposes, but horrendous for production.  Don't be that dev.
-            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-        }
-
-
-    }
 }

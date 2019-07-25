@@ -24,6 +24,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.ListPopupWindow;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +32,6 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListPopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -94,7 +94,7 @@ public class MultiImageSelectorFragment extends Fragment {
     private ImageGridAdapter mImageAdapter;
     private FolderAdapter mFolderAdapter;
 
-    private ListPopupWindow mFolderPopupWindow;
+    private android.support.v7.widget.ListPopupWindow mFolderPopupWindow;
 
     private TextView mCategoryText;
     private View mPopupAnchorView;
@@ -179,7 +179,7 @@ public class MultiImageSelectorFragment extends Fragment {
                 if (scrollState == SCROLL_STATE_FLING) {
                     PicassoProvider.get().pauseTag(TAG);
                 } else {
-                    PicassoProvider.get().resumeTag(TAG);
+                    PicassoProvider.get().pauseTag(TAG);
                 }
             }
 
